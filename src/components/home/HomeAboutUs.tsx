@@ -1,3 +1,5 @@
+import { images } from '@/data/assets';
+import Image from 'next/image';
 import React from 'react'
 
 interface AboutUsType {
@@ -12,17 +14,32 @@ const aboutUsData: AboutUsType[] = [
 
 const HomeAboutUs = () => {
     return (
-        <section className='h-screen w-full py-10 px-8 bg-background'>
+        <section className='h-screen w-full py-10 px-8 bg-background relative overflow-hidden'>
             <div className='w-11/12 mx-auto space-y-10 p-16 rounded-[60px] bg-primary relative z-10'>
                 {
                     aboutUsData.map((data: AboutUsType, index: number) => (
                         <div key={index} className='text-center space-y-6'>
-                            <h4 className='text-primary-2 font-crimson font-bold text-4xl'>{data.title}</h4>
+                            <h4 className='text-primary-2 font-crimson-pro font-bold text-4xl'>{data.title}</h4>
                             <p className='text-white font-normal text-xl'>{data.content}</p>
                         </div>
                     ))
                 }
             </div>
+
+            <Image
+                src={images.Bamboo}
+                alt='bamboo'
+                width={221}
+                height={394}
+                className='absolute left-0 bottom-0'
+            />
+            <Image
+                src={images.Bamboo}
+                alt='bamboo'
+                width={221}
+                height={394}
+                className='absolute -right-16 -bottom-96 scale-x-[-1]'
+            />
         </section>
     )
 }

@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion'
+import Image from 'next/image';
+import { images } from '@/data/assets';
 
 interface ServiceTabs {
     id: string
@@ -50,7 +52,7 @@ function ServicesTabs() {
                 transition={{ duration: 0.5 }}
                 key={selectedTab.id}
             >
-                <h2 className="text-3xl font-semibold font-crimson bg-clip-text text-transparent"
+                <h2 className="text-3xl font-semibold font-crimson-text bg-clip-text text-transparent"
                     style={{ backgroundImage: "linear-gradient(90.03deg, #5A613F 0.02%, #8B8354 99.36%)" }}
                 >
                     {selectedTab.title}</h2>
@@ -67,11 +69,11 @@ function ServicesTabs() {
 
 const HomeServices = () => {
     return (
-        <section className='h-screen w-full py-10 px-8 bg-background'>
+        <section className='h-screen w-full py-10 px-8 bg-background relative overflow-hidden'>
             <div className='lg:w-3/4 mx-auto space-y-10'>
                 <header className='text-center space-y-6 w-4/5 mx-auto'>
                     <h1
-                        className="font-crimson font-semibold text-5xl bg-clip-text text-transparent"
+                        className="font-crimson-pro font-semibold text-5xl bg-clip-text text-transparent"
                         style={{ backgroundImage: "linear-gradient(90.03deg, #5A613F 0.02%, #8B8354 99.36%)" }}
                     >
                         Building Solutions that Drive Results
@@ -80,6 +82,21 @@ const HomeServices = () => {
                 </header>
                 <ServicesTabs />
             </div>
+
+            <Image
+                src={images.Bamboo}
+                alt='bamboo'
+                width={221}
+                height={394}
+                className='absolute left-0 bottom-0'
+            />
+            <Image
+                src={images.Bamboo}
+                alt='bamboo'
+                width={221}
+                height={394}
+                className='absolute -right-16 -bottom-96 scale-x-[-1]'
+            />
         </section>
     )
 }
