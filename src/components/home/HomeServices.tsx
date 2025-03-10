@@ -56,7 +56,7 @@ function ServicesTabs() {
                     {selectedTab.title}</h2>
                 <p className="font-poppins text-lg font-normal text-black">{selectedTab.content}</p>
                 <button className="mt-4 px-4 py-2 bg-[#F9D776] text-primary font-semibold rounded-lg hover:bg-[#EFC65E]">
-                    Let's Connect
+                    {" Let's Connect"}
                 </button>
             </motion.div>
         </div >

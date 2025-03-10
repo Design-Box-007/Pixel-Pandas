@@ -41,7 +41,7 @@ const Navbar = () => {
                 {/* Call-to-Action Button */}
                 <li>
                     <button className="bg-primary text-white font-medium px-4 py-2 rounded-lg flex items-center gap-2">
-                        <span>Let's Discuss</span>
+                        <span>{"Let's Discuss"}</span>
                         <FaArrowRight />
                     </button>
                 </li>

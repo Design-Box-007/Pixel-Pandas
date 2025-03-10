@@ -13,16 +13,13 @@ const Hero = () => {
     const y = useTransform(scrollYProgress, [0, 1], ['0%', '-50%'])
     const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
     const [allowScroll, setAllowScroll] = useState(false)
-    const [hideSection, setHideSection] = useState(false)
 
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange((latest) => {
             if (latest >= 1) {
                 setAllowScroll(true)
-                setTimeout(() => setHideSection(true), 500) // Fade-out effect before removal
             } else {
                 setAllowScroll(false)
-                setHideSection(false)
             }
         })
         return () => unsubscribe()
