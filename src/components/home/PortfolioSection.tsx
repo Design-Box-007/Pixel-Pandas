@@ -101,7 +101,7 @@ const PortfolioCardComponent: React.FC<{ portfolio: PortfolioCard; onClick: () =
             </button>
             <p
                 className="text-2xl h-16 font-semibold font-poppins bg-clip-text text-transparent"
-                style={{ backgroundImage: "linear-gradient(90.03deg, #5A613F 0.02%, #8B8354 99.36%)" }}
+                style={{ backgroundImage: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}
             >
                 {portfolio.tagLine}
             </p>
@@ -179,7 +179,7 @@ const PortfolioPopup: React.FC<{ data: PortfolioCard; onClose: () => void }> = (
                 </div>
 
                 {/* Title */}
-                <h2 className="mt-3 text-xl font-bold text-[#5A613F]">{data.title}</h2>
+                <h2 className="mt-3 text-xl font-bold text-[#194a26]">{data.title}</h2>
 
                 {/* Description */}
                 <p className="mt-2 text-gray-700 text-sm">
@@ -210,7 +210,7 @@ const PortfolioSection = () => {
     return (
         <section className="min-h-screen w-full py-10 px-8 space-y-4 bg-background flex flex-col items-center">
             <h1 className="font-crimson-pro font-semibold text-6xl text-center bg-clip-text text-transparent"
-                style={{ backgroundImage: "linear-gradient(90.03deg, #5A613F 0.02%, #8B8354 99.36%)" }}>
+                style={{ backgroundImage: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}>
                 Where Creativity Meets Innovation
             </h1>
 

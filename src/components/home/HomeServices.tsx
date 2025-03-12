@@ -53,7 +53,7 @@ function ServicesTabs() {
                 key={selectedTab.id}
             >
                 <h2 className="text-3xl font-semibold font-crimson-text bg-clip-text text-transparent"
-                    style={{ backgroundImage: "linear-gradient(90.03deg, #5A613F 0.02%, #8B8354 99.36%)" }}
+                    style={{ backgroundImage: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}
                 >
                     {selectedTab.title}</h2>
                 <p className="font-poppins text-lg font-normal text-black">{selectedTab.content}</p>
@@ -74,7 +74,7 @@ const HomeServices = () => {
                 <header className='text-center space-y-6 w-4/5 mx-auto'>
                     <h1
                         className="font-crimson-pro font-semibold text-5xl bg-clip-text text-transparent"
-                        style={{ backgroundImage: "linear-gradient(90.03deg, #5A613F 0.02%, #8B8354 99.36%)" }}
+                        style={{ backgroundImage: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}
                     >
                         Building Solutions that Drive Results
                     </h1>

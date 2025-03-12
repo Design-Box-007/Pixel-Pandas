@@ -17,13 +17,13 @@ const Navbar = () => {
     ]
 
     return (
-        <nav className="flex w-full items-center bg-background z-20 justify-between px-6 fixed top-0 right-0 left-0">
+        <nav className="flex w-full items-center bg-background z-30 justify-between px-6 py-6 fixed top-0 right-0 left-0">
             {/* Logo */}
             <div>
                 <Image
                     src={images.Logo}
                     alt="Logo"
-                    width={51}
+                    width={251}
                     height={32}
                 />
             </div>

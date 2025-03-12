@@ -4,7 +4,8 @@
 
 
 @theme {
-  --color-primary: #5A613F;
+  /* --color-primary: #5A613F; */
+  --color-primary: #194a26;
   --color-secondary: #6B6B6B;
   --color-background: #EFE9DD;
   --color-foreground: #333333;
@@ -33,5 +34,9 @@ body {
 
 
 .primary-gradient {
-  background: linear-gradient(90.03deg, #5A613F 0.02%, #8B8354 99.36%);
+  background: linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%);
+}
+
+.custom-box-shadow {
+  box-shadow: 0px 29px 64px 0px #0000001A;
 }

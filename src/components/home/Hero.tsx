@@ -8,7 +8,7 @@ import React, { useEffect, useState, useRef } from 'react'
 const Hero = () => {
     const containerRef = useRef(null)
     const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end start'] })
-    
+
     const scale = useTransform(scrollYProgress, [0, 1], [0.6, 5])
     const y = useTransform(scrollYProgress, [0, 1], ['0%', '-50%'])
     const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
@@ -26,10 +26,10 @@ const Hero = () => {
     }, [scrollYProgress])
 
     return (
-        <section 
-            ref={containerRef} 
-            className={`relative -z-10 flex items-center justify-center h-screen w-full ${allowScroll ? 'overflow-auto' : 'overflow-hidden'}`}>
-            <motion.div 
+        <section
+            ref={containerRef}
+            className={`relative mt-[120px] -z-10 flex items-center justify-center h-screen w-full ${allowScroll ? 'overflow-auto' : 'overflow-hidden'}`}>
+            <motion.div
                 style={{ scale, opacity, y }}
                 className="w-[25%] flex justify-center items-center fixed z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             >

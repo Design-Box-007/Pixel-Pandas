@@ -16,7 +16,7 @@ const Footer = () => {
                     <p className='font-normal font-poppins text-xl text-primary'>{"Let’s craft a unique experience together. Get in touch today to start your journey with Us"}</p>
                 </div>
 
-                {/* style={{background: "linear-gradient(90.03deg, #5A613F 0.02%, #8B8354 99.36%)"}} */}
+                {/* style={{background: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)"}} */}
                 <div className="flex items-center rounded-full border border-primary w-full max-w-md">
                     <input
                         type="text"
@@ -24,7 +24,7 @@ const Footer = () => {
                         className="flex-1 bg-transparent px-4 py-2 text-[#8A7B66] outline-none placeholder:text-[#B0A58D]"
                     />
                     <button className="text-white px-6 py-3 rounded-full text-sm font-medium"
-                        style={{ background: "linear-gradient(90.03deg, #5A613F 0.02%, #8B8354 99.36%)" }}
+                        style={{ background: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}
                     >
                         Reach Out
                     </button>
