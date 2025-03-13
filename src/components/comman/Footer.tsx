@@ -1,8 +1,7 @@
 import { images } from '@/data/assets';
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react'
-import { FaFacebook, FaInstagram, FaLinkedin, FaMedium, FaRegEnvelope, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaMedium } from 'react-icons/fa';
 import { FaX, FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
@@ -62,7 +61,7 @@ const Footer = () => {
 
                 <div className='flex flex-wrap justify-center gap-6 items-center w-full text-center text-sm md:text-base'>
                     <a href=""></a>
-                    <a href=""></a>'
+                    <a href=""></a>
                     <a href=""></a>
                 </div>
             </div>
