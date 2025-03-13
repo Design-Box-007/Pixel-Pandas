@@ -93,12 +93,14 @@ const PortfolioCardComponent: React.FC<{ portfolio: PortfolioCard; onClick: () =
     return (
         <div
             onClick={onClick}
-            className="p-4 text-primary min-h-[500px] bg-transparent flex flex-col justify-between gap-4 cursor-pointer"
+            className="p-4 text-primary bg-transparent flex flex-col justify-between gap-4 cursor-pointer"
         >
-            <div className="text-4xl font-bold custom-stroke-primary text-transparent">{portfolio.id}</div>
-            <button className="text-base w-fit font-medium font-poppins py-2 px-4 border border-primary rounded-full">
-                {portfolio.title}
-            </button>
+            <div className="flex flex-row justify-between gap-4 w-full">
+                <div className="text-4xl font-bold custom-stroke-primary text-transparent">{portfolio.id}</div>
+                <button className="text-base w-fit font-medium font-poppins py-2 px-4 border border-primary rounded-full">
+                    {portfolio.title}
+                </button>
+            </div>
             <p
                 className="text-2xl h-16 font-semibold font-poppins bg-clip-text text-transparent"
                 style={{ backgroundImage: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}
@@ -107,13 +109,13 @@ const PortfolioCardComponent: React.FC<{ portfolio: PortfolioCard; onClick: () =
             </p>
 
             {/* Image Wrapper with Centered Button */}
-            <div className="relative w-full h-auto group overflow-hidden rounded-lg">
+            <div className="relative w-full h-[200px] group overflow-hidden rounded-lg">
                 <Image
                     src={portfolio.imgSrc}
                     alt={portfolio.title}
                     width={424}
                     height={255}
-                    className="rounded-lg w-full h-auto object-center object-cover transition-all duration-300 ease-in-out group-hover:brightness-75"
+                    className="rounded-lg w-full h-full object-center object-cover transition-all duration-300 ease-in-out group-hover:brightness-75"
                 />
 
                 {/* Centered Button */}
@@ -200,7 +202,6 @@ const PortfolioPopup: React.FC<{ data: PortfolioCard; onClose: () => void }> = (
 
 const PortfolioSection = () => {
     const swiperRef = useRef<SwiperClass | null>(null);
-
     const [selectedPortfolio, setSelectedPortfolio] = useState<PortfolioCard | null>(null);
 
     return (
@@ -216,6 +217,7 @@ const PortfolioSection = () => {
                     modules={[Navigation]}
                     spaceBetween={15}
                     slidesPerView={1}
+                    onSwiper={(swiper) => (swiperRef.current = swiper)} // ✅ Assigning Swiper instance
                     breakpoints={{
                         480: { slidesPerView: 1.2, spaceBetween: 15 },
                         640: { slidesPerView: 1.5, spaceBetween: 20 },
@@ -232,23 +234,21 @@ const PortfolioSection = () => {
                 </Swiper>
             </div>
 
-
             {/* Custom Navigation Buttons */}
             <div className="flex gap-4">
                 <button
-                    onClick={() => swiperRef.current?.slidePrev()}
-                    className="px-6 py-3 bg-transparent border-primary border text-primary rounded-full shadow-md hover:bg-primary hover:text-white transition"
+                    onClick={() => swiperRef.current?.slidePrev()} // ✅ Now it works!
+                    className="px-6 cursor-pointe py-3 bg-transparent border-primary border text-primary rounded-full shadow-md hover:bg-primary hover:text-white transition"
                 >
                     <FaArrowLeft />
                 </button>
                 <button
-                    onClick={() => swiperRef.current?.slideNext()}
-                    className="px-6 py-3 bg-transparent border-primary border text-primary rounded-full shadow-md hover:bg-primary hover:text-white transition"
+                    onClick={() => swiperRef.current?.slideNext()} // ✅ Now it works!
+                    className="px-6 cursor-pointe py-3 bg-transparent border-primary border text-primary rounded-full shadow-md hover:bg-primary hover:text-white transition"
                 >
                     <FaArrowRight />
                 </button>
             </div>
-
 
             {/* Popup */}
             <AnimatePresence>

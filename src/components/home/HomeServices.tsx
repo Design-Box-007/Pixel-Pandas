@@ -111,6 +111,7 @@ const HomeServices = () => {
                         </motion.p>
                     </motion.div>
                 </header>
+                <ServicesTabs />
             </div>
 
             {/* Background Decorative Images */}
