@@ -2,7 +2,7 @@ import { images } from '@/data/assets';
 import Image from 'next/image';
 import React from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin, FaMedium } from 'react-icons/fa';
-import { FaX, FaXTwitter } from 'react-icons/fa6';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
 
