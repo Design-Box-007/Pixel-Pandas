@@ -12,7 +12,7 @@ interface ServiceTabs {
 }
 
 const data: ServiceTabs[] = [
-    { id: '01', title: 'Website Development', content: 'At Pixel Pandas, we specialize in creating dynamic, responsive, and user-friendly websites tailored to your business needs. Whether you’re looking for an e-commerce platform, corporate site, or a personal blog, we bring your vision to life with innovative web solutions.' },
+    { id: '01', title: 'Website Development', content: 'At , we specialize in creating dynamic, responsive, and user-friendly websites tailored to your business needs. Whether you’re looking for an e-commerce platform, corporate site, or a personal blog, we bring your vision to life with innovative web solutions.' },
     { id: '02', title: 'Website & Product Design', content: 'Our design team crafts visually stunning and functional designs that enhance user experience and engagement.' },
     { id: '03', title: 'ERP/CRM Solutions', content: 'We develop integrated ERP and CRM solutions to streamline your business processes and enhance productivity.' },
     { id: '04', title: 'SEO Services', content: 'Improve your search engine ranking and drive organic traffic with our expert SEO services.' },
@@ -57,14 +57,14 @@ function ServicesTabs() {
                 transition={{ duration: 0.5 }}
                 key={selectedTab.id}
             >
-                <h2
+                {/* <h2
                     className="text-2xl md:text-3xl font-semibold font-crimson-text bg-clip-text text-transparent"
                     style={{
                         backgroundImage: 'linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)'
                     }}
                 >
                     {selectedTab.title}
-                </h2>
+                </h2> */}
                 <p className="font-poppins text-base md:text-lg font-normal text-black mt-2">
                     {selectedTab.content}
                 </p>
