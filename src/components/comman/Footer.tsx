@@ -2,11 +2,18 @@ import { images } from '@/data/assets';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
-import { FaFacebook, FaInstagram, FaRegEnvelope } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaMedium, FaRegEnvelope, FaTwitter } from 'react-icons/fa';
+import { FaX, FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
+
+    const email: string = "";
+    const phoneNumber: string = "";
+    const address: string = "";
+    const location: string = "";
+
     return (
-        <footer className='min-h-screen space-y-24 w-full py-10 px-4 md:px-8 bg-background relative overflow-hidden'>
+        <footer className='min-h-screen space-y-4 w-full py-20 px-4 md:px-8 bg-background relative overflow-hidden'>
 
             {/* Heading & Input Section */}
             <div className='h-full w-full flex flex-col justify-center gap-8 items-center text-center'>
@@ -24,8 +31,8 @@ const Footer = () => {
                         placeholder="Let us know about your magic"
                         className="flex-1 bg-transparent px-4 py-3 text-[#8A7B66] outline-none placeholder:text-[#B0A58D] w-full md:w-auto"
                     />
-                    <button 
-                        className="text-white px-6 py-4 rounded-full text-sm font-medium w-fit lg:w-full md:w-auto"
+                    <button
+                        className="text-white px-6 py-4 rounded-full text-sm font-medium w-fit"
                         style={{ background: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}
                     >
                         Reach Out
@@ -37,7 +44,7 @@ const Footer = () => {
             <div className='max-w-md mx-auto'>
                 <div className='flex flex-wrap justify-center gap-4 items-center w-11/12 mx-auto'>
                     <a href='' className='p-4'>
-                        <FaRegEnvelope size={28} />
+                        <FaXTwitter size={28} />
                     </a>
                     <a href='' className='p-4'>
                         <FaInstagram size={28} />
@@ -45,18 +52,18 @@ const Footer = () => {
                     <a href='' className='p-4'>
                         <FaFacebook size={28} />
                     </a>
+                    <a href="" className='p-4'>
+                        <FaLinkedin size={28} />
+                    </a>
+                    <a href="" className='p-4'>
+                        <FaMedium size={28} />
+                    </a>
                 </div>
 
                 <div className='flex flex-wrap justify-center gap-6 items-center w-full text-center text-sm md:text-base'>
-                    <Link href={'#about'} className='p-2 md:p-4'>
-                        About
-                    </Link>
-                    <Link href={'#services'} className='p-2 md:p-4'>
-                        Services
-                    </Link>
-                    <Link href={'#projects'} className='p-2 md:p-4'>
-                        Projects
-                    </Link>
+                    <a href=""></a>
+                    <a href=""></a>'
+                    <a href=""></a>
                 </div>
             </div>
 
@@ -87,7 +94,7 @@ const Footer = () => {
                         className='absolute w-full -bottom-8 left-0 right-0 z-10'
                     />
                     <h5 className='relative z-20 text-center text-[#8B8354] text-base md:text-xl font-normal my-6'>
-                        Pixel Panda
+                        Pixel Panda Technologies
                     </h5>
                 </div>
             </div>
