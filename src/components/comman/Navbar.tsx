@@ -16,9 +16,10 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks: NavLinksTypes[] = [
-        { title: 'About Us', href: '#about' },
-        { title: 'Services', href: '#services' },
-        { title: 'Projects', href: '#projects' },
+        { title: 'About Us', href: '/#about' },
+        { title: 'Services', href: '/#services' },
+        { title: 'Projects', href: '/#projects' },
+        { title: 'Portfolio', href: '/portfolio' },
     ];
 
     return (
