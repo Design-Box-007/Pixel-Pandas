@@ -31,18 +31,16 @@ function ServicesTabs() {
                     <button
                         key={item.id}
                         onClick={() => setSelectedTab(item)}
-                        className={`flex items-center p-3 text-base md:text-lg font-semibold rounded-l-full transition-all duration-300 ${
-                            selectedTab.id === item.id
-                                ? 'bg-primary text-primary-2'
-                                : 'bg-primary-2 text-primary'
-                        }`}
+                        className={`flex items-center p-3 text-base md:text-lg font-semibold rounded-l-full transition-all duration-300 ${selectedTab.id === item.id
+                            ? 'bg-primary text-primary-2'
+                            : 'bg-primary-2 text-primary'
+                            }`}
                     >
                         <span
-                            className={`mr-3 font-bold text-transparent ${
-                                selectedTab.id === item.id
-                                    ? 'custom-stroke-primary-2'
-                                    : 'custom-stroke-primary'
-                            }`}
+                            className={`mr-3 font-bold text-transparent ${selectedTab.id === item.id
+                                ? 'custom-stroke-primary-2'
+                                : 'custom-stroke-primary'
+                                }`}
                         >
                             {item.id}
                         </span>
@@ -82,18 +80,37 @@ const HomeServices = () => {
     return (
         <section className="w-full py-10 px-6 md:px-8 bg-background relative overflow-hidden">
             <div className="max-w-6xl mx-auto space-y-10">
-                <header className="text-center space-y-6 w-full md:w-4/5 mx-auto">
-                    <h1
-                        className="font-crimson-pro font-semibold text-4xl md:text-5xl bg-clip-text text-transparent"
-                        style={{ backgroundImage: 'linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)' }}
+                <header className="text-center h-screen bg-rangoli-image bg-rangoli flex justify-center items-center w-full md:w-4/5 mx-auto">
+                    <motion.div
+                        className='w-full space-y-6'
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1 }}
                     >
-                        Building Solutions that Drive Results
-                    </h1>
-                    <p className="font-poppins font-normal text-lg md:text-xl">
-                        Our development expertise brings designs to life. We deliver cutting-edge solutions that are as functional as they are beautiful.
-                    </p>
+                        {/* Heading Animation (Top to Bottom) */}
+                        <motion.h1
+                            className="font-crimson-pro font-semibold text-4xl md:text-5xl bg-clip-text text-transparent"
+                            style={{ backgroundImage: 'linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)' }}
+                            initial={{ y: -50, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 1, ease: 'easeOut' }}
+                            viewport={{ once: true }}
+                        >
+                            Building Solutions that Drive Results
+                        </motion.h1>
+
+                        {/* Paragraph Animation (Bottom to Top) */}
+                        <motion.p
+                            className="font-poppins font-normal text-lg md:text-xl"
+                            initial={{ y: 50, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
+                            viewport={{ once: true }}
+                        >
+                            Our development expertise brings designs to life. We deliver cutting-edge solutions that are as functional as they are beautiful.
+                        </motion.p>
+                    </motion.div>
                 </header>
-                <ServicesTabs />
             </div>
 
             {/* Background Decorative Images */}

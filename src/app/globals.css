@@ -7,7 +7,8 @@
   /* --color-primary: #5A613F; */
   --color-primary: #194a26;
   --color-secondary: #6B6B6B;
-  --color-background: #EFE9DD;
+  --color-background: #ffffff;
+  /* --color-background: #EFE9DD; */
   --color-foreground: #333333;
   --color-primary-2: #F9D972;
   --font-poppins: Poppins, sans-serif;
@@ -23,6 +24,15 @@ body {
 .custom-stroke-primary {
   -webkit-text-stroke: 1px var(--color-primary);
   /* Dark green stroke */
+}
+
+.bg-rangoli-image {
+  background-image: url('../../public/images/bg-rangoli.png');
+}
+
+
+.bg-rangoli{
+  @apply bg-center bg-contain bg-no-repeat;
 }
 
 
