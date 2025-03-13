@@ -7,10 +7,10 @@ import { FaX, FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
 
-    const email: string = "";
-    const phoneNumber: string = "";
-    const address: string = "";
-    const location: string = "";
+    // const email: string = "";
+    // const phoneNumber: string = "";
+    // const address: string = "";
+    // const location: string = "";
 
     return (
         <footer className='min-h-screen space-y-4 w-full py-20 px-4 md:px-8 bg-background relative overflow-hidden'>
