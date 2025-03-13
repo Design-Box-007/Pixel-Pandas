@@ -151,7 +151,7 @@ const PortfolioPopup: React.FC<{ data: PortfolioCard; onClose: () => void }> = (
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 font-poppins flex items-center justify-center bg-opacity-30 backdrop-blur-lg z-50"
+            className="fixed inset-0 font-poppins flex items-center justify-center bg-opacity-30 backdrop-blur-lg z-50 px-4"
             onClick={onClose}
         >
             <motion.div
@@ -159,43 +159,39 @@ const PortfolioPopup: React.FC<{ data: PortfolioCard; onClose: () => void }> = (
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "100%", opacity: 0 }}
                 transition={{ type: "spring", stiffness: 120, damping: 15 }}
-                className="w-full max-w-lg bg-[#F8F3E8] p-6 rounded-2xl shadow-lg relative"
+                className="w-full max-w-sm md:max-w-lg bg-[#F8F3E8] p-4 md:p-6 rounded-2xl shadow-lg relative"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Close Button */}
                 <button onClick={onClose} className="absolute top-2 right-2 text-gray-600 text-xl">&times;</button>
 
                 {/* Image */}
-                <div className="w-full h-48 bg-gray-300 rounded-lg overflow-hidden">
+                <div className="w-full h-40 md:h-48 bg-gray-300 rounded-lg overflow-hidden">
                     <Image src={data.imgSrc} alt={data.title} width={666} height={315} className="w-full h-full object-cover" />
                 </div>
 
-                {/* Project ID */}
+                {/* Content */}
                 <div className="mt-4 text-lg font-bold custom-stroke-primary text-transparent">{data.id}</div>
 
-                {/* Tag */}
-                <div className="inline-block bg-yellow-300 text-gray-800 font-medium px-4 py-1 rounded-full mt-2">
+                <div className="inline-block bg-yellow-300 text-gray-800 font-medium px-3 md:px-4 py-1 rounded-full mt-2">
                     {data.tagLine}
                 </div>
 
-                {/* Title */}
-                <h2 className="mt-3 text-xl font-bold text-[#194a26]">{data.title}</h2>
+                <h2 className="mt-3 text-lg md:text-xl font-bold text-[#194a26]">{data.title}</h2>
 
-                {/* Description */}
-                <p className="mt-2 text-gray-700 text-sm">
-                    {data.description}
-                </p>
+                <p className="mt-2 text-gray-700 text-sm md:text-base">{data.description}</p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-3 mt-4">
+                <div className="flex flex-wrap gap-2 md:gap-3 mt-4">
                     {data.tags.map((tag, index) => (
-                        <span key={index} className="px-4 py-2 bg-[#6B6644] text-white text-xs rounded-full">
+                        <span key={index} className="px-3 md:px-4 py-1 bg-[#6B6644] text-white text-xs md:text-sm rounded-full">
                             {tag}
                         </span>
                     ))}
                 </div>
             </motion.div>
         </motion.div>
+
     );
 };
 
@@ -208,8 +204,8 @@ const PortfolioSection = () => {
     const [selectedPortfolio, setSelectedPortfolio] = useState<PortfolioCard | null>(null);
 
     return (
-        <section className="min-h-screen w-full py-10 px-8 space-y-4 bg-background flex flex-col items-center">
-            <h1 className="font-crimson-pro font-semibold text-6xl text-center bg-clip-text text-transparent"
+        <section className="min-h-screen w-full py-10 px-4 md:px-8 space-y-6 bg-background flex flex-col items-center">
+            <h1 className="font-crimson-pro font-semibold text-4xl md:text-6xl text-center bg-clip-text text-transparent"
                 style={{ backgroundImage: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}>
                 Where Creativity Meets Innovation
             </h1>
@@ -218,29 +214,24 @@ const PortfolioSection = () => {
             <div className="w-full">
                 <Swiper
                     modules={[Navigation]}
-                    spaceBetween={20}
+                    spaceBetween={15}
                     slidesPerView={1}
-                    onSwiper={(swiper) => (swiperRef.current = swiper)}
                     breakpoints={{
-                        640: { slidesPerView: 1 },
-                        768: { slidesPerView: 2 },
-                        1024: { slidesPerView: 3 }
+                        480: { slidesPerView: 1.2, spaceBetween: 15 },
+                        640: { slidesPerView: 1.5, spaceBetween: 20 },
+                        768: { slidesPerView: 2, spaceBetween: 20 },
+                        1024: { slidesPerView: 3, spaceBetween: 30 }
                     }}
-                    className="my-5"
+                    className="w-full"
                 >
-                    {portfolioCards.map((portfolio: PortfolioCard, index: number) => (
-                        <SwiperSlide key={index}>
-                            <PortfolioCardComponent key={portfolio.id} portfolio={portfolio} onClick={() => setSelectedPortfolio(portfolio)} />
+                    {portfolioCards.map((portfolio) => (
+                        <SwiperSlide key={portfolio.id}>
+                            <PortfolioCardComponent portfolio={portfolio} onClick={() => setSelectedPortfolio(portfolio)} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
             </div>
 
-            <AnimatePresence>
-                {selectedPortfolio && (
-                    <PortfolioPopup data={selectedPortfolio} onClose={() => setSelectedPortfolio(null)} />
-                )}
-            </AnimatePresence>
 
             {/* Custom Navigation Buttons */}
             <div className="flex gap-4">
@@ -257,7 +248,16 @@ const PortfolioSection = () => {
                     <FaArrowRight />
                 </button>
             </div>
+
+
+            {/* Popup */}
+            <AnimatePresence>
+                {selectedPortfolio && (
+                    <PortfolioPopup data={selectedPortfolio} onClose={() => setSelectedPortfolio(null)} />
+                )}
+            </AnimatePresence>
         </section>
+
     );
 };
 

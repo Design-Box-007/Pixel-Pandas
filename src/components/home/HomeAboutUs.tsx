@@ -14,34 +14,32 @@ const aboutUsData: AboutUsType[] = [
 
 const HomeAboutUs = () => {
     return (
-        <section className='h-screen w-full py-10 px-8 bg-background relative overflow-hidden'>
-            <div className='w-11/12 mx-auto space-y-10 p-16 rounded-[60px] bg-primary relative z-10'>
-                {
-                    aboutUsData.map((data: AboutUsType, index: number) => (
-                        <div key={index} className='text-center space-y-6'>
-                            <h4 className='text-primary-2 font-crimson-pro font-bold text-4xl'>{data.title}</h4>
-                            <p className='text-white font-normal text-xl'>{data.content}</p>
-                        </div>
-                    ))
-                }
+        <section className="min-h-screen w-full py-10 px-4 md:px-8 bg-background relative overflow-hidden">
+            <div className="max-w-7xl mx-auto space-y-10 p-6 md:p-16 rounded-3xl bg-primary relative z-10">
+                {aboutUsData.map((data: AboutUsType, index: number) => (
+                    <div key={index} className="text-center space-y-6">
+                        <h4 className="text-primary-2 font-crimson-pro font-bold text-3xl md:text-4xl">{data.title}</h4>
+                        <p className="text-white font-normal text-lg md:text-xl">{data.content}</p>
+                    </div>
+                ))}
             </div>
 
             <Image
                 src={images.Bamboo}
-                alt='bamboo'
-                width={221}
-                height={394}
-                className='absolute left-0 bottom-0'
+                alt="bamboo"
+                width={150}
+                height={250}
+                className="absolute left-0 bottom-0 hidden md:block"
             />
             <Image
                 src={images.Bamboo}
-                alt='bamboo'
-                width={221}
-                height={394}
-                className='absolute -right-16 -bottom-96 scale-x-[-1]'
+                alt="bamboo"
+                width={150}
+                height={250}
+                className="absolute -right-8 -bottom-60 scale-x-[-1] hidden md:block"
             />
         </section>
-    )
-}
+    );
+};
 
 export default HomeAboutUs

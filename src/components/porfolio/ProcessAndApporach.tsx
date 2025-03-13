@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
 
-
 interface ProcessApproachCardsType {
     title: string;
     content: string;
@@ -26,7 +25,7 @@ const processApproachData: ProcessApproachCardsType[] = [
     }
 ]
 
-const ProcessAndApporachCards: React.FC<ProcessApproachCardsType> = ({ title, content }) => {
+const ProcessAndApproachCards: React.FC<ProcessApproachCardsType> = ({ title, content }) => {
     return (
         <div className='border rounded-4xl border-primary-2 py-16 px-10 space-y-4 relative z-20 bg-background backdrop-blur-md'>
             <h4 className='font-semibold font-crimson-pro text-3xl'>{title}</h4>
@@ -35,9 +34,9 @@ const ProcessAndApporachCards: React.FC<ProcessApproachCardsType> = ({ title, co
     )
 }
 
-const ProcessAndApporach = () => {
+const ProcessAndApproach = () => {
     return (
-        <section className='my-35 relative h-screen mx-auto space-y-12 w-11/12 lg:w-4/5'>
+        <section className='my-35 relative min-h-screen mx-auto space-y-12 w-11/12 lg:w-4/5'>
             <h1
                 className="font-crimson-pro font-semibold text-6xl bg-clip-text text-center text-transparent"
                 style={{ backgroundImage: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}
@@ -47,7 +46,7 @@ const ProcessAndApporach = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                 {
                     processApproachData.map((data: ProcessApproachCardsType, index: number) => (
-                        <ProcessAndApporachCards title={data.title} content={data.content} key={index} />
+                        <ProcessAndApproachCards title={data.title} content={data.content} key={index} />
                     ))
                 }
             </div>
@@ -57,6 +56,4 @@ const ProcessAndApporach = () => {
     )
 }
 
-export default ProcessAndApporach
-
-
+export default ProcessAndApproach

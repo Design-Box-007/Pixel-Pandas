@@ -1,12 +1,12 @@
-'use client'
+'use client';
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { images } from '@/data/assets';
 
 interface ServiceTabs {
-    id: string
+    id: string;
     title: string;
     content: string;
 }
@@ -24,81 +24,95 @@ function ServicesTabs() {
     const [selectedTab, setSelectedTab] = useState(data[0]);
 
     return (
-        <div className="flex items-center p-6 w-full mx-auto space-x-8">
+        <div className="flex flex-col md:flex-row items-center p-6 w-full mx-auto space-y-6 md:space-x-8 md:space-y-0">
             {/* Left Column - Tabs */}
-            <div className="w-1/2 flex flex-col space-y-2">
-                {data.map((item: ServiceTabs, index: number) => (
+            <div className="w-full md:w-1/2 flex flex-col space-y-2">
+                {data.map((item: ServiceTabs) => (
                     <button
-                        key={index}
+                        key={item.id}
                         onClick={() => setSelectedTab(item)}
-                        className={`flex items-center p-3 text-lg font-semibold rounded-l-full transition-all duration-300 ${selectedTab.id === item.id
-                            ? 'bg-primary text-primary-2'
-                            : 'bg-primary-2 text-primary'
-                            }`}
+                        className={`flex items-center p-3 text-base md:text-lg font-semibold rounded-l-full transition-all duration-300 ${
+                            selectedTab.id === item.id
+                                ? 'bg-primary text-primary-2'
+                                : 'bg-primary-2 text-primary'
+                        }`}
                     >
-                        <span className={`mr-3 font-bold text-transparent ${selectedTab.id === item.id
-                            ? 'custom-stroke-primary-2'
-                            : 'custom-stroke-primary'
-                            }`}>{item.id}</span> {item.title}
+                        <span
+                            className={`mr-3 font-bold text-transparent ${
+                                selectedTab.id === item.id
+                                    ? 'custom-stroke-primary-2'
+                                    : 'custom-stroke-primary'
+                            }`}
+                        >
+                            {item.id}
+                        </span>
+                        {item.title}
                     </button>
                 ))}
             </div>
 
             {/* Right Column - Content */}
             <motion.div
-                className="w-1/2 pl-6"
+                className="w-full md:w-1/2 p-4 md:pl-6 text-center md:text-left"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
                 key={selectedTab.id}
             >
-                <h2 className="text-3xl font-semibold font-crimson-text bg-clip-text text-transparent"
-                    style={{ backgroundImage: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}
+                <h2
+                    className="text-2xl md:text-3xl font-semibold font-crimson-text bg-clip-text text-transparent"
+                    style={{
+                        backgroundImage: 'linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)'
+                    }}
                 >
-                    {selectedTab.title}</h2>
-                <p className="font-poppins text-lg font-normal text-black">{selectedTab.content}</p>
+                    {selectedTab.title}
+                </h2>
+                <p className="font-poppins text-base md:text-lg font-normal text-black mt-2">
+                    {selectedTab.content}
+                </p>
                 <button className="mt-4 px-4 py-2 bg-[#F9D776] text-primary font-semibold rounded-lg hover:bg-[#EFC65E]">
-                    {" Let's Connect"}
+                    {"Let's Connect"}
                 </button>
             </motion.div>
-        </div >
+        </div>
     );
 }
 
-
-
 const HomeServices = () => {
     return (
-        <section className='h-screen w-full py-10 px-8 bg-background relative overflow-hidden'>
-            <div className='lg:w-3/4 mx-auto space-y-10'>
-                <header className='text-center space-y-6 w-4/5 mx-auto'>
+        <section className="w-full py-10 px-6 md:px-8 bg-background relative overflow-hidden">
+            <div className="max-w-6xl mx-auto space-y-10">
+                <header className="text-center space-y-6 w-full md:w-4/5 mx-auto">
                     <h1
-                        className="font-crimson-pro font-semibold text-5xl bg-clip-text text-transparent"
-                        style={{ backgroundImage: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}
+                        className="font-crimson-pro font-semibold text-4xl md:text-5xl bg-clip-text text-transparent"
+                        style={{ backgroundImage: 'linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)' }}
                     >
                         Building Solutions that Drive Results
                     </h1>
-                    <p className='font-poppins font-normal text-xl'>Our development expertise brings designs to life. We deliver cutting-edge solutions that are as functional as they are beautiful.</p>
+                    <p className="font-poppins font-normal text-lg md:text-xl">
+                        Our development expertise brings designs to life. We deliver cutting-edge solutions that are as functional as they are beautiful.
+                    </p>
                 </header>
                 <ServicesTabs />
             </div>
 
+            {/* Background Decorative Images */}
             <Image
                 src={images.Bamboo}
-                alt='bamboo'
-                width={221}
-                height={394}
-                className='absolute left-0 bottom-0'
+                alt="bamboo"
+                width={180}
+                height={320}
+                className="absolute left-0 bottom-0 hidden sm:block"
             />
             <Image
                 src={images.Bamboo}
-                alt='bamboo'
-                width={221}
-                height={394}
-                className='absolute -right-16 -bottom-96 scale-x-[-1]'
+                alt="bamboo"
+                width={180}
+                height={320}
+                className="absolute -right-12 -bottom-64 sm:-right-16 sm:-bottom-96 scale-x-[-1]"
             />
         </section>
-    )
-}
+    );
+};
 
-export default HomeServices
+export default HomeServices;

@@ -1,7 +1,7 @@
 import { images } from '@/data/assets'
 import Image from 'next/image'
 import React from 'react'
-import { FaHandPointRight, FaIcicles } from 'react-icons/fa'
+import { FaHandPointRight } from 'react-icons/fa'
 
 const outcomeData: string[] = [
     "30% increase in appointment attendance due to automated reminders.",
@@ -20,56 +20,52 @@ const outcomeData2: string[] = [
 
 const PortfolioOutcome = () => {
     return (
-        <section className="my-35 px-8 space-y-20">
-            <div className='flex flex-row'>
-                <div className='space-y-10'>
-                    <h1 className='font-bold text-[64px] leading-[2] text-transparent bg-clip-text'
+        <section className="my-20 px-4 md:px-8 space-y-16 max-w-[1440px] mx-auto">
+            <div className='flex flex-col md:flex-row gap-12 items-center'>
+                <div className='space-y-8 flex-[2] w-full lg:w-1/2'>
+                    <h1 className='font-bold text-[48px] md:text-[64px] leading-tight text-transparent bg-clip-text text-center md:text-left'
                         style={{ backgroundImage: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}
-                    >OutCome</h1>
-                    <ul className='space-y-8'>
-                        {outcomeData.map((data: string, index: number) => (
-                            <li key={index} className='font-normal text-xl flex flex-row justify-start items-center gap-4'>
-                                <FaHandPointRight />
+                    >Outcome</h1>
+                    <ul className='space-y-6'>
+                        {outcomeData.map((data, index) => (
+                            <li key={index} className='font-normal text-base md:text-xl flex items-center gap-4'>
+                                <FaHandPointRight className='text-primary' />
                                 <span>{data}</span>
                             </li>
                         ))}
                     </ul>
                 </div>
-                <div className='relative flex-1'>
-                    <div className='absolute top-20 right-0 border-4 rounded-3xl overflow-hidden border-white'>
+                <div className='relative flex-1 flex justify-center w-11/12 lg:w-1/2 min-h-[337px] h-[337px]'>
+                    <div className='absolute top-10 right-0 border-4 rounded-3xl overflow-hidden border-white h-[250px] w-[250px] md:w-[332px]'>
                         <Image
                             src={images.projectOutcome1}
                             width={332}
                             height={332}
                             alt="outcome1"
-                            className='w-full h-full'
+                            className='w-full h-full object-cover'
                         />
                     </div>
-                    <div className='absolute bottom-0 left-0 border-4 rounded-3xl overflow-hidden border-white'>
+                    <div className='absolute -bottom-12 left-12 border-4 rounded-3xl overflow-hidden border-white h-[172px] w-[172px] md:w-[229px]'>
                         <Image
                             src={images.projectOutcome2}
                             width={229}
                             height={229}
                             alt="outcome2"
-                            className='w-full h-full'
+                            className='w-full h-full object-cover'
                         />
                     </div>
                 </div>
             </div>
-            <div className='flex flex-row items-center'>
-                <ul className='space-y-6 flex-1'>
-                    {
-                        outcomeData2.map((data: string, index) => (
-                            <li key={index} className='text-white rounded-xl primary-gradient py-4 px-6 font-semibold font-poppins text-xl'>
-                                {data}
-                            </li>
-                        ))
-                    }
+            <div className='flex flex-col md:flex-row items-center gap-8'>
+                <ul className='space-y-4 flex-1 text-center md:text-left'>
+                    {outcomeData2.map((data, index) => (
+                        <li key={index} className='text-white rounded-xl primary-gradient py-3 px-5 font-semibold font-poppins text-lg md:text-xl'>
+                            {data}
+                        </li>
+                    ))}
                 </ul>
-                <p className='font-normal font-poppins text-xl p-10 text-primary flex-1'>
-                    {
-                        "We designed and developed a custom CRM platform that integrated with their existing systems, automated key processes, and provided a centralized platform for all patient-related activities."
-                    }
+                <p className='font-normal font-poppins text-lg md:text-xl text-primary text-center md:text-left max-w-[600px] px-4 md:px-10'>
+                    We designed and developed a custom CRM platform that integrated with their existing systems, automated key processes, and provided a centralized platform for all patient-related activities.
                 </p>
             </div>
         </section>
@@ -77,8 +73,3 @@ const PortfolioOutcome = () => {
 }
 
 export default PortfolioOutcome
-
-
-
-
-
