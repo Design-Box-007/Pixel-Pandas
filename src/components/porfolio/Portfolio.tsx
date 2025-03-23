@@ -7,7 +7,7 @@ import Testimonials from './Testimonials'
 
 const Portfolio = () => {
   return (
-    <section className='mt-[120px]'>
+    <section className='pt-[83px]'>
       <PortfolioHero />
       <ProjectOverview />
       <ProcessAndApporach />

@@ -9,16 +9,8 @@ import "swiper/css";
 import { images } from "@/data/assets";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { AnimatePresence, motion } from "motion/react";
+import { PortfolioCard } from "@/types";
 
-
-interface PortfolioCard {
-    id: string;
-    title: string;
-    tagLine: string;
-    imgSrc: string;
-    description: string;
-    tags: string[];
-}
 
 const portfolioCards: PortfolioCard[] = [
     {
@@ -205,7 +197,7 @@ const PortfolioSection = () => {
     const [selectedPortfolio, setSelectedPortfolio] = useState<PortfolioCard | null>(null);
 
     return (
-        <section className="min-h-screen w-full py-10 px-4 md:px-8 space-y-6 bg-background flex flex-col items-center">
+        <section className="custom-h-screen w-full py-10 px-4 md:px-8 space-y-6 bg-background flex flex-col items-center">
             <h1 className="font-crimson-pro font-semibold text-4xl md:text-6xl text-center bg-clip-text text-transparent"
                 style={{ backgroundImage: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}>
                 Where Creativity Meets Innovation

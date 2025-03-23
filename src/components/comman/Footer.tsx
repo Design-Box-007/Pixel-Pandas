@@ -1,104 +1,84 @@
 import { images } from '@/data/assets';
+import { contactUsEmail, navLinks, socialMedia } from '@/data/comman';
+import { NavbarLinks, SocialMediaLinks } from '@/types';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
-import { FaFacebook, FaInstagram, FaLinkedin, FaMedium } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+
 
 const Footer = () => {
-
-    // const email: string = "";
-    // const phoneNumber: string = "";
-    // const address: string = "";
-    // const location: string = "";
-
     return (
-        <footer className='min-h-screen space-y-4 w-full py-20 px-4 md:px-8 bg-background relative overflow-hidden'>
+        <footer className='bg-primary custom-h-screen h-screen z-60 sticky top-0 custom-h-screen-h overflow-hidden'>
+            <div className='p-4 flex flex-col justify-between h-2/4 gap-4'>
+                {/* top */}
+                <div>
+                    <nav className="flex flex-col gap-4 lg:flex-row lg:items-center justify-between">
+                        {/* logo */}
+                        <div className="text-xl font-bold text-white flex flex-row items-center gap-2">
+                            <Link href={'/'}>
+                                <Image
+                                    src={images.Logo}
+                                    alt="logo"
+                                    width={200}
+                                    height={83}
+                                    className="mix-blend-plus-lighter"
+                                />
+                            </Link>
 
-            {/* Heading & Input Section */}
-            <div className='h-full w-full flex flex-col justify-center gap-8 items-center text-center'>
-                <h1 className='font-semibold font-crimson-pro text-primary text-6xl md:text-[180px] leading-none'>
-                    {"Let’s Talk"}
-                </h1>
-                <p className='font-normal font-poppins text-lg md:text-xl text-primary max-w-2xl'>
-                    {"Let’s craft a unique experience together. Get in touch today to start your journey with Us"}
-                </p>
+                            {/* <span>
+                          <span className="text-primary">S</span>pace <span className="text-primary">S</span>culp<span className="text-primary">t</span>
+                      </span> */}
+                        </div>
+                        {/* Desktop Navigation Links */}
+                        <ul className="rounded-[20px] flex flex-col lg:flex-row gap-2 text-white">
+                            {navLinks.map((navlink: NavbarLinks, index: number) => (
+                                <Link
+                                    href={navlink.link}
+                                    key={index}
+                                    className={`pr-4 mr-4 ${index !== navLinks.length - 1 ? "lg:border-r-white lg:border-r-[1px]" : ""}`}
+                                    passHref
+                                >
+                                    <li className="hover:text-white cursor-pointer">{navlink.title}</li>
+                                </Link>
+                            ))}
+                        </ul>
 
-                {/* Input & Button */}
-                <div className="flex md:flex-row items-center gap-3 md:gap-0 rounded-full border border-primary w-full max-w-md">
-                    <input
-                        type="text"
-                        placeholder="Let us know about your magic"
-                        className="flex-1 bg-transparent px-4 py-3 text-[#8A7B66] outline-none placeholder:text-[#B0A58D] w-full md:w-auto"
-                    />
-                    <button
-                        className="text-white px-6 py-4 rounded-full text-sm font-medium w-fit"
-                        style={{ background: "linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)" }}
-                    >
-                        Reach Out
-                    </button>
+                        <ul className="rounded-[20px] flex gap-5 text-white">
+                            {socialMedia.map(({ link, icon: Icon }: SocialMediaLinks, index: number) => (
+                                <a
+                                    href={link}
+                                    key={index}
+                                >
+                                    <Icon size={20} className='text-white' />
+                                </a>
+                            ))}
+                        </ul>
+                    </nav>
+                </div>
+                {/* middle */}
+                <div className='w-full flex flex-col lg:flex-row lg:items-center justify-between gap-4 capitalize'>
+
+
+                    <p className='text-sm font-normal text-white'>For inquiries, email us at <a href={`mailto:${contactUsEmail.toLowerCase()}`} target='_blank' className="mt-2 lowercase font-bold">{contactUsEmail}</a></p>
+
+                    {/* <p className='text-sm font-normal text-white'><a href='https://www.pixelpanda.ae/'>This website is Designed and Developed by The <b>Pixel Panda Technology</b></a></p> */}
+
+                    <div className='space-y-4 lg:space-x-4'>
+                        <span className='text-sm block lg:inline font-normal text-white capitalize'>Privacy policy</span>
+                        <span className='text-sm block lg:inline font-normal text-white capitalize'>Terms & conditions</span>
+                    </div>
                 </div>
             </div>
 
-            {/* Social Links & Navigation */}
-            <div className='max-w-md mx-auto'>
-                <div className='flex flex-wrap justify-center gap-4 items-center w-11/12 mx-auto'>
-                    <a href='' className='p-4'>
-                        <FaXTwitter size={28} />
-                    </a>
-                    <a href='' className='p-4'>
-                        <FaInstagram size={28} />
-                    </a>
-                    <a href='' className='p-4'>
-                        <FaFacebook size={28} />
-                    </a>
-                    <a href="" className='p-4'>
-                        <FaLinkedin size={28} />
-                    </a>
-                    <a href="" className='p-4'>
-                        <FaMedium size={28} />
-                    </a>
-                </div>
-
-                <div className='flex flex-wrap justify-center gap-6 items-center w-full text-center text-sm md:text-base'>
-                    <a href=""></a>
-                    <a href=""></a>
-                    <a href=""></a>
-                </div>
+            <div className='h-[300px] relative overflow-hidden text-center rounded-t-3xl flex flex-col items-center justify-center md:h-2/4'>
+                <Image src={images.footerBg} loading='lazy' alt='footer-image' width={1366} height={614} className='h-full w-full absolute top-0 right-0 left-0 z-10 object-cover brightness-[.6]' />
+                <h1 className='font-medium text-[6vw] relative z-20 text-white text-center'>Pixel Pandas Technologies</h1>
             </div>
 
-            {/* Background Images */}
-            <Image
-                src={images.Bamboo}
-                alt='bamboo'
-                width={180}
-                height={320}
-                className='absolute left-0 bottom-0 z-20 hidden md:block'
-            />
-            <Image
-                src={images.Bamboo}
-                alt='bamboo'
-                width={180}
-                height={320}
-                className='absolute -right-12 -bottom-40 scale-x-[-1] z-20 hidden md:block'
-            />
-
-            {/* Footer Decorative Section */}
-            <div className='absolute w-full left-0 right-0 bottom-0 z-10'>
-                <div className='relative w-full'>
-                    <Image
-                        src={images.FooterEllipse}
-                        alt='alt'
-                        width={221}
-                        height={394}
-                        className='absolute w-full -bottom-8 left-0 right-0 z-10'
-                    />
-                    <h5 className='relative z-20 text-center text-[#8B8354] text-base md:text-xl font-normal my-6'>
-                        Pixel Panda Technologies
-                    </h5>
-                </div>
-            </div>
+            {/* bottom */}
         </footer>
-    );
+    )
 }
+
 
 export default Footer;

@@ -1,11 +1,7 @@
 import { images } from '@/data/assets';
+import { AboutUsType } from '@/types';
 import Image from 'next/image';
 import React from 'react'
-
-interface AboutUsType {
-    title: string;
-    content: string;
-}
 
 const aboutUsData: AboutUsType[] = [
     { title: "Who We Are", content: "We are Pixel Panda, a modern software studio driven by innovation and simplicity. Specializing in web, app, and software solutions, we bring your ideas to life with precision, creativity, and purpose. Our focus is on crafting experiences that inspire, connect, and deliver lasting impact." },
@@ -14,7 +10,7 @@ const aboutUsData: AboutUsType[] = [
 
 const HomeAboutUs = () => {
     return (
-        <section className="min-h-screen w-full py-10 px-4 md:px-8 bg-background relative overflow-hidden">
+        <section className="custom-h-screen w-full py-10 px-4 md:px-8 bg-background relative overflow-hidden">
             <div className="max-w-7xl mx-auto space-y-10 p-6 md:p-16 rounded-3xl bg-primary relative z-10">
                 {aboutUsData.map((data: AboutUsType, index: number) => (
                     <div key={index} className="text-center space-y-6">

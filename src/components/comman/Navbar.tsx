@@ -6,34 +6,26 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaBars, FaTimes, FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { navLinks } from '@/data/comman';
+import { NavbarLinks } from '@/types';
 
-interface NavLinksTypes {
-    title: string;
-    href: string;
-}
+
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const navLinks: NavLinksTypes[] = [
-        { title: 'About Us', href: '/#about' },
-        { title: 'Services', href: '/#services' },
-        { title: 'Projects', href: '/#projects' },
-        { title: 'Portfolio', href: '/portfolio' },
-    ];
-
     return (
         <nav className="fixed top-0 right-0 left-0 z-50 bg-background px-6 py-4 flex justify-between items-center">
             {/* Logo */}
-            <div className='relative z-50'>
+            <Link href={'/'} className='relative z-50'>
                 <Image src={images.Logo} alt="Logo" width={180} height={32} />
-            </div>
+            </Link>
 
             {/* Desktop Nav */}
             <ul className="hidden md:flex items-center space-x-6">
-                {navLinks.map((link, index) => (
+                {navLinks.map((link: NavbarLinks, index: number) => (
                     <li key={index}>
-                        <Link href={link.href} className="text-black hover:text-gray-600">
+                        <Link href={link.link} className="text-black hover:text-gray-600">
                             {link.title}
                         </Link>
                     </li>
@@ -66,7 +58,7 @@ const Navbar = () => {
                     {navLinks.map((link, index) => (
                         <Link
                             key={index}
-                            href={link.href}
+                            href={link.link}
                             className="text-black hover:text-gray-600 text-2xl"
                             onClick={() => setIsOpen(false)}
                         >

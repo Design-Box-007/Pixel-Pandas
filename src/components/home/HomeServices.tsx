@@ -4,12 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { images } from '@/data/assets';
-
-interface ServiceTabs {
-    id: string;
-    title: string;
-    content: string;
-}
+import { ServiceTabs } from '@/types';
 
 const data: ServiceTabs[] = [
     {
@@ -44,11 +39,11 @@ const data: ServiceTabs[] = [
     }
 ];
 
-function ServicesTabs() {
+export function ServicesTabs() {
     const [selectedTab, setSelectedTab] = useState(data[0]);
 
     return (
-        <div className="flex flex-col md:flex-row items-center p-6 w-full mx-auto space-y-6 md:space-x-8 md:space-y-0">
+        <div className="max-w-6xl flex flex-col custom-h-screen md:flex-row items-center p-6 w-full mx-auto space-y-6 md:space-x-8 md:space-y-0">
             {/* Left Column - Tabs */}
             <div className="w-full md:w-[35%] flex flex-col space-y-2">
                 {data.map((item: ServiceTabs) => (
@@ -100,43 +95,48 @@ function ServicesTabs() {
     );
 }
 
+export function ServiceHeader() {
+    return (
+        <header className="max-w-6xl text-center custom-h-screen bg-rangoli-image bg-rangoli flex justify-center items-center w-full md:w-4/5 mx-auto">
+            <motion.div
+                className='w-full space-y-6'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+            >
+                {/* Heading Animation (Top to Bottom) */}
+                <motion.h1
+                    className="font-gilroy font-semibold text-4xl md:text-5xl bg-clip-text text-transparent"
+                    style={{ backgroundImage: 'linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)' }}
+                    initial={{ y: -50, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 1, ease: 'easeOut' }}
+                    viewport={{ once: true }}
+                >
+                    Building Solutions that Drive Results
+                </motion.h1>
+
+                {/* Paragraph Animation (Bottom to Top) */}
+                <motion.p
+                    className="font-gilroy font-normal text-base md:text-xl"
+                    initial={{ y: 50, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
+                    viewport={{ once: true }}
+                >
+                    {
+                        "We specialize in crafting innovative software solutions that deliver real-world results. With a strong foundation in technology and design, we create custom software that not only meets the needs of your business but also enhances user experience and drives operational efficiency. Our team of experts works closely with you to understand your unique challenges, offering tailored solutions that combine functionality with aesthetic appeal. Whether you're looking for enterprise applications, mobile solutions, or web platforms, we provide the expertise and cutting-edge technology to bring your ideas to life and help you stay ahead in a competitive market"
+                    }
+                </motion.p>
+            </motion.div>
+        </header>
+    )
+}
+
 const HomeServices = () => {
     return (
         <section className="w-full py-10 px-6 md:px-8 bg-background relative overflow-hidden">
             <div className="max-w-6xl mx-auto space-y-10">
-                <header className="text-center h-screen bg-rangoli-image bg-rangoli flex justify-center items-center w-full md:w-4/5 mx-auto">
-                    <motion.div
-                        className='w-full space-y-6'
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1 }}
-                    >
-                        {/* Heading Animation (Top to Bottom) */}
-                        <motion.h1
-                            className="font-crimson-pro font-semibold text-4xl md:text-5xl bg-clip-text text-transparent"
-                            style={{ backgroundImage: 'linear-gradient(90.03deg, #194a26 0.02%, #8B8354 99.36%)' }}
-                            initial={{ y: -50, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 1, ease: 'easeOut' }}
-                            viewport={{ once: true }}
-                        >
-                            Building Solutions that Drive Results
-                        </motion.h1>
-
-                        {/* Paragraph Animation (Bottom to Top) */}
-                        <motion.p
-                            className="font-poppins font-normal text-base md:text-xl"
-                            initial={{ y: 50, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
-                            viewport={{ once: true }}
-                        >
-                            {
-                                "We specialize in crafting innovative software solutions that deliver real-world results. With a strong foundation in technology and design, we create custom software that not only meets the needs of your business but also enhances user experience and drives operational efficiency. Our team of experts works closely with you to understand your unique challenges, offering tailored solutions that combine functionality with aesthetic appeal. Whether you're looking for enterprise applications, mobile solutions, or web platforms, we provide the expertise and cutting-edge technology to bring your ideas to life and help you stay ahead in a competitive market"
-                            }
-                        </motion.p>
-                    </motion.div>
-                </header>
                 <ServicesTabs />
             </div>
 

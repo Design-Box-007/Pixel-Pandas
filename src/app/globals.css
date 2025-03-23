@@ -14,7 +14,51 @@
   --font-poppins: Poppins, sans-serif;
   --font-crimson-text: "Crimson Text", serif;
   --font-crimson-pro: "Crimson Pro", serif;
+  --font-gilroy: "Gilroy", sans-serif;
 }
+
+
+/* Gilroy Bold */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Gilroy Heavy */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Heavy.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Gilroy Light */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Gilroy Medium */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Gilroy Regular */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 
 body {
   background-color: var(--color-background);
@@ -30,8 +74,12 @@ body {
   background-image: url('../../public/images/bg-rangoli.png');
 }
 
+.footer-black-gradient {
+  background: linear-gradient(360deg, #323232 0%, #222222 100%);
 
-.bg-rangoli{
+}
+
+.bg-rangoli {
   @apply bg-center bg-contain bg-no-repeat;
 }
 
@@ -49,4 +97,17 @@ body {
 
 .custom-box-shadow {
   box-shadow: 0px 29px 64px 0px #0000001A;
+}
+
+/* .custom-h-screen {
+  height: 100%;
+} */
+
+@media screen and (width > 1024px) {
+  .custom-h-screen {
+    min-height: calc(100vh - 83px);
+  }
+  .custom-h-screen-h {
+    height: calc(100vh - 83px);
+  }
 }
