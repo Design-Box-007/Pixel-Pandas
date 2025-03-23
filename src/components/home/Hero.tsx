@@ -90,7 +90,7 @@ const Hero = () => {
                                 <motion.img
                                     src={images.BambooLeft}
                                     alt="bg-BambooLeft"
-                                    className="absolute w-auto h-full -left-30"
+                                    className="absolute w-auto h-full -left-72 lg:-left-30"
                                     initial={{ opacity: 0, scale: 0.5, x: -300 }}
                                     animate={{ opacity: 1, scale: 1, x: 0 }}
                                     exit={{ opacity: 0 }}
@@ -99,7 +99,7 @@ const Hero = () => {
                                 <motion.img
                                     src={images.BambooRight}
                                     alt="bg-BambooRight"
-                                    className="absolute w-auto h-full -right-30"
+                                    className="absolute w-auto h-full -right-72 lg:-right-30"
                                     initial={{ opacity: 0, scale: 0.5, x: 300 }}
                                     animate={{ opacity: 1, scale: 1, x: 0 }}
                                     exit={{ opacity: 0 }}

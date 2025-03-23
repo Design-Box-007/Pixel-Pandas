@@ -43,7 +43,7 @@ export function ServicesTabs() {
     const [selectedTab, setSelectedTab] = useState(data[0]);
 
     return (
-        <div className="max-w-6xl flex flex-col custom-h-screen md:flex-row items-center p-6 w-full mx-auto space-y-6 md:space-x-8 md:space-y-0">
+        <div className="max-w-6xl bg-background flex flex-col min-h-screen md:flex-row items-center p-6 w-full mx-auto space-y-6 md:space-x-8 md:space-y-0">
             {/* Left Column - Tabs */}
             <div className="w-full md:w-[35%] flex flex-col space-y-2">
                 {data.map((item: ServiceTabs) => (
@@ -97,7 +97,7 @@ export function ServicesTabs() {
 
 export function ServiceHeader() {
     return (
-        <header className="max-w-6xl text-center custom-h-screen bg-rangoli-image bg-rangoli flex justify-center items-center w-full md:w-4/5 mx-auto">
+        <header className="max-w-6xl py-10 px-6 md:px-8 bg-background text-center custom-h-screen bg-rangoli-image bg-rangoli flex justify-center items-center w-full md:w-4/5 mx-auto">
             <motion.div
                 className='w-full space-y-6'
                 initial={{ opacity: 0 }}

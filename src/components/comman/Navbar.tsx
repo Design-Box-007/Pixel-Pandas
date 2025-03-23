@@ -25,7 +25,7 @@ const Navbar = () => {
             <ul className="hidden md:flex items-center space-x-6">
                 {navLinks.map((link: NavbarLinks, index: number) => (
                     <li key={index}>
-                        <Link href={link.link} className="text-black hover:text-gray-600">
+                        <Link href={`${link.link}`} className="text-black hover:text-gray-600">
                             {link.title}
                         </Link>
                     </li>

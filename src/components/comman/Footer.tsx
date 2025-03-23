@@ -8,7 +8,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className='bg-primary custom-h-screen h-screen z-60 sticky top-0 custom-h-screen-h overflow-hidden'>
+        <footer className='bg-primary z-60 sticky top-0 custom-h-screen-h overflow-hidden'>
             <div className='p-4 flex flex-col justify-between h-2/4 gap-4'>
                 {/* top */}
                 <div>

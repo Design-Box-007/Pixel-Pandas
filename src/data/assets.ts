@@ -28,6 +28,8 @@ const images = {
     LoadTwo: '/images/HeroImages/LoadTwo.png',
     BambooLeft: '/images/HeroImages/BambooLeft.png',
     BambooRight: '/images/HeroImages/BambooRight.png',
+
+    pandaCircle :'/images/panda-circle.png',
 }
 
 export { images }

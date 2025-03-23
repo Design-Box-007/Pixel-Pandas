@@ -13,13 +13,13 @@ const Home = () => {
             <div className="z-10 sticky top-[83px] flex items-center h-svh lg:h-screen bg-background">
                 <Hero />
             </div>
-            <div className="z-20 sticky top-0 flex items-center h-svh lg:h-screen bg-background ">
+            <div id={"about"} className="z-20 sticky top-0 flex items-center h-svh lg:h-screen bg-background ">
                 <ServiceHeader />
             </div>
-            <div className="z-20 sticky top-0 flex items-center h-svh lg:h-screen bg-background">
+            <div id={'#services'} className="z-20 sticky top-0 flex items-center h-svh lg:h-screen bg-background">
                 <ServicesTabs />
             </div>
-            <div className="z-30 sticky top-0 flex items-center h-svh lg:h-screen bg-background">
+            <div id={"#projects"} className="z-30 sticky top-0 flex items-center h-svh lg:h-screen bg-background">
                 <HomeAboutUs />
             </div>
             <div className="z-40 sticky top-0 flex items-center h-svh lg:h-screen bg-background">

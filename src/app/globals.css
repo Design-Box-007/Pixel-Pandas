@@ -103,6 +103,11 @@ body {
   height: 100%;
 } */
 
+.custom-h-screen {
+  min-height: calc(100vh);
+}
+
+
 @media screen and (width > 1024px) {
   .custom-h-screen {
     min-height: calc(100vh - 83px);
